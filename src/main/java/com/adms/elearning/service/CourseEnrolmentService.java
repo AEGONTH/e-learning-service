@@ -14,6 +14,8 @@ public interface CourseEnrolmentService {
 
 	public CourseEnrolment update(CourseEnrolment entity, String userLogin) throws Exception;
 
+	public CourseEnrolment find(Long id) throws Exception;
+
 	public List<CourseEnrolment> find(CourseEnrolment example) throws Exception;
 
 	public List<CourseEnrolment> findByHql(String hql, Object...vals) throws Exception;
@@ -21,5 +23,6 @@ public interface CourseEnrolmentService {
 	public List<CourseEnrolment> findByNamedQuery(String namedQuery, Object...vals) throws Exception;
 
 	public List<CourseEnrolment> findByCriteria(DetachedCriteria criteria) throws Exception;
+
 
 }

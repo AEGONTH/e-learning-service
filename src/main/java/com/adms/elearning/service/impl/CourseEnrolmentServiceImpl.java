@@ -18,15 +18,15 @@ public class CourseEnrolmentServiceImpl implements CourseEnrolmentService {
 
 	@Autowired
 	private CourseEnrolmentDao courseEnrolmentDao;
-	
+
 	public CourseEnrolmentServiceImpl() {
-		
+
 	}
 
 	public void setCourseEnrolmentDao(CourseEnrolmentDao courseEnrolmentDao) {
 		this.courseEnrolmentDao = courseEnrolmentDao;
 	}
-	
+
 	@Override
 	public List<CourseEnrolment> findAll() throws Exception {
 		return courseEnrolmentDao.findAll();
@@ -36,17 +36,22 @@ public class CourseEnrolmentServiceImpl implements CourseEnrolmentService {
 	public CourseEnrolment add(CourseEnrolment example, String userLogin) throws Exception {
 		return courseEnrolmentDao.save(example);
 	}
-	
+
 	@Override
 	public CourseEnrolment update(CourseEnrolment example, String userLogin) throws Exception {
 		return courseEnrolmentDao.save(example);
 	}
-	
+
+	@Override
+	public CourseEnrolment find(Long id) throws Exception {
+		return courseEnrolmentDao.find(id);
+	}
+
 	@Override
 	public List<CourseEnrolment> find(CourseEnrolment example) throws Exception {
 		return courseEnrolmentDao.find(example);
 	}
-	
+
 	@Override
 	public List<CourseEnrolment> findByHql(String hql, Object...vals) throws Exception {
 		return courseEnrolmentDao.findByHQL(hql, vals);
@@ -56,10 +61,10 @@ public class CourseEnrolmentServiceImpl implements CourseEnrolmentService {
 	public List<CourseEnrolment> findByNamedQuery(String namedQuery, Object...vals) throws Exception {
 		return courseEnrolmentDao.findByNamedQuery(namedQuery, vals);
 	}
-	
+
 	@Override
 	public List<CourseEnrolment> findByCriteria(DetachedCriteria criteria) throws Exception {
 		return courseEnrolmentDao.findByCriteria(criteria);
 	}
-	
+
 }
